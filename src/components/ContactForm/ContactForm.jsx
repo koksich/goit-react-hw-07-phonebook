@@ -11,9 +11,9 @@ export const ContactForm = () => {
 
 
 
-  const onSubmit = event => {
+  const handleSubmit = event => {
     event.preventDefault();
-    const { name, number } = event.currentTarget.elements;
+    const { name, phone } = event.currentTarget.elements;
 
     if (onDuplicateCheck(name.value)) {
             alert(`${name.value} is already in contacts`);
@@ -21,7 +21,7 @@ export const ContactForm = () => {
       name.focus();
       return;
     }
-    dispatch(addContact(name.value, number.value));
+    dispatch(addContact({name: name.value, phone: phone.value}));
     event.currentTarget.reset();
   }
 
@@ -32,7 +32,7 @@ const onDuplicateCheck = name => {
 };
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Label htmlFor="name">Name</Label>
       <Input
         type="text"
@@ -46,11 +46,11 @@ const onDuplicateCheck = name => {
       <Label htmlFor="number">Number</Label>
       <Input
         type="tel"
-        name="number"
+        name="phone"
         pattern="^(\+?[0-9.\(\)\-\s]*)$"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
-        id="number"
+        id="phone"
       />
 
       <Button type="submit">Add contact</Button>

@@ -4,8 +4,6 @@ import { Filter } from 'components/Filter/Filter';
 import { Wrapper, Title } from './App.styled';
 
 export const App = () => {
-  
-
   return (
     <Wrapper>
       <Title>Phonebook</Title>

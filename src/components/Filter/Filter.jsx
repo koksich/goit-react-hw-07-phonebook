@@ -4,9 +4,7 @@ import { setFilter } from 'redux/filterSlice';
 import { Input, Label, Wrapper } from './Filter.styled';
 
 export const Filter = () => {
-
   const dispatch = useDispatch();
-
   const onChangeFilter = event => {dispatch(setFilter(event.target.value))};
 
   return (
