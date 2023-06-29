@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { Input, Label, Wrapper } from './Filter.styled';
 import { getFilter, setFilter } from 'redux/contactsSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,8 +20,4 @@ export const Filter = () => {
       />
     </Wrapper>
   );
-};
-
-Filter.propTypes = {
-  value: PropTypes.string,
 };

@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { ContactListItem } from 'components/ContactListItem/ContactListItem';
 import { List } from './ContactList.styled';
 import { getConatcs, getFilter } from 'redux/contactsSlice';
@@ -28,7 +26,3 @@ export const ContactList = () => {
   );
 };
 
-ContactList.propTypes = {
-  contacts: PropTypes.array,
-  onDeleteContacts: PropTypes.func,
-};
